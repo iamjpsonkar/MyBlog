@@ -4,7 +4,7 @@ from blog.models import Post,Comment
 class PostForm(forms.ModelForm):
     
     class Meta():
-        models = Post
+        model = Post
         fields = ('author','title','text')
         
         # adding css classes
@@ -16,7 +16,7 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     
     class Meta():
-        models = Comment 
+        model = Comment 
         fields = ('author','text')
         
         # adding css classes

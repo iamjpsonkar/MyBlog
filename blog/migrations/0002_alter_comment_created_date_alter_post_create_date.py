@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='comment',
-            name='created_date',
+            name='create_date',
             field=models.DateTimeField(default=datetime.datetime(2022, 2, 20, 9, 21, 4, 737446, tzinfo=utc)),
         ),
         migrations.AlterField(

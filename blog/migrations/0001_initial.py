@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('author', models.CharField(max_length=200)),
                 ('text', models.TextField()),
-                ('created_date', models.DateTimeField(default=datetime.datetime(2022, 2, 20, 9, 17, 46, 704443, tzinfo=utc))),
+                ('create_date', models.DateTimeField(default=datetime.datetime(2022, 2, 20, 9, 17, 46, 704443, tzinfo=utc))),
                 ('approved_comment', models.BooleanField(default=False)),
                 ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='blog.post')),
             ],
