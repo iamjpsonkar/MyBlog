@@ -1,0 +1,37 @@
+docker build -t django-core:v1 .
+
+docker images
+
+docker run -p 8000:8000 django-core:v1
+
+The above is used to run loacally
+
+Now for heroku, in Dockerfile 
+
+# comment below for heroku
+# EXPOSE 8000
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "blog_site.wsgi"]
+#and use below
+CMD gunicorn blog_site.wsgi --bind 0.0.0.0:$PORT 
+
+heroku login
+heroku contatiner:login
+
+in setting.py change
+ALLOWED_HOSTS = []
+to 
+ALLOWED_HOSTS = ['*']
+
+heroku create myblog-blogsite
+
+heroku container:push web -a=myblog-blogsite
+
+heroku config:add ALLOWED_HOSTS=* -a=myblog-blogsite
+
+heroku config:get ALLOWED_HOSTS=* -a=myblog-blogsite
+
+heroku container:release -a myblog-blogsite web
+
+heroku logs --tail -a myblog-blogsite
+
+heroku open -a=myblog-blogsite

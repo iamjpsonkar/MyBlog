@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-tr^*wvjy%d4e19r_rj5z=)f*3j(q+_^a25v4af6f5gpe4z!@+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com','https://*.127.0.0.1']
+#ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 
 # Application definition
